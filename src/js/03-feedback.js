@@ -22,6 +22,11 @@ function onFormInput() {
 
 function onFormSubmit(e) {
     e.preventDefault();
+    
+    if (formObj.email === '' || formObj.message === '') {
+        return alert("Please fill in all fields!");
+    }
+
     console.log(JSON.parse(localStorage.getItem(FORM_VALUE)));
     e.currentTarget.reset();
     localStorage.removeItem(FORM_VALUE);
